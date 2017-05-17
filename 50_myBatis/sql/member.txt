@@ -1,0 +1,10 @@
+create table member_data (
+member_id varchar2(10) primary key,
+pw varchar2(10) not null,
+name varchar2(15) not null)
+;
+
+insert into member_data
+values ('jeon','1234','young');
+insert into member_data
+values ('kim','000','±è¹Î¼º');
