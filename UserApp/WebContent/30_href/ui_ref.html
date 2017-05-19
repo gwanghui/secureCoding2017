@@ -1,0 +1,27 @@
+<!DOCTYPE html >
+<html>
+	<head>
+	<script type="text/javascript">
+	menu3 = function(){
+		location.href="http://www.google.co.kr";
+	}
+	</script>
+	</head>
+	<body>
+		<div><a href="">menu1</a></div>
+		<div onclick="javascript:location.href='http://www.daum.net'">menu2</div>
+		<div onclick="menu3()">menu3</div>	
+	</body>
+	<script type="text/javascript">
+		//document.querySelector("body").innerHTML="<div>new</div>";
+		
+		document.querySelector("div").addEventListener("click", function(){
+			location.href="http://www.imbc.com";
+		});
+		document.querySelectorAll("div")[1].addEventListener("mouseover", function(){
+			//alert('div2');
+			document.querySelectorAll("div")[2].innerHTML="메뉴이름바꾸기";
+			document.querySelectorAll("div")[2].style.backgroundColor="red";
+		});
+	</script>
+</html>

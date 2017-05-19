@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+	<customer custId="k">
+		<name>kim</name>
+		<phoneNumber>010-0000-2222</phoneNumber>
+	</customer>
+	<customer custId="j">
+		<name>jeon</name>
+		<phoneNumber>010-1111-0000</phoneNumber>
+	</customer>
+	<customer custId="m">
+		<name>min</name>
+		<phoneNumber>010-1111-2222</phoneNumber>
+	</customer>
+
+</customers>

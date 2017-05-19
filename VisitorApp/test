@@ -1,0 +1,6 @@
+//·Î±×ÀÎ
+select name from member 
+where mem_id='jeon' and member_pw='1234'
+select mem_id, name from member 
+where mem_id='' or mem_id like '%' 
+and member_pw='' or mem_id like '%'

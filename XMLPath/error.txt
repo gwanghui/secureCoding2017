@@ -1,0 +1,5 @@
+java.lang.NullPointerException
+	at CustomerData.toString(CustomerData.java:27)
+	at java.lang.String.valueOf(String.java:2982)
+	at java.io.PrintStream.println(PrintStream.java:821)
+	at CustomerDataTest.main(CustomerDataTest.java:20)

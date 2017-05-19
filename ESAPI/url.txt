@@ -1,0 +1,5 @@
+https://www.owasp.org/index.php/ESAPI_Specification
+https://www.owasp.org/index.php/Category:OWASP_Enterprise_Security_API#tab=Downloads
+https://code.google.com/p/owasp-esapi-java/downloads/list
+
+http://www.javadoc.io/doc/org.owasp.esapi/esapi/2.1.0

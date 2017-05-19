@@ -1,0 +1,32 @@
+drop table member
+drop table visitor
+
+//DDL : JDBC's Statement's method execute() : boolean
+// DBMS 접근 소프트웨어를 개발하는 개발자가 많이 사용
+//일반적인 application 개발자는 빈도가 낮거나 사용하지 않는다.
+create table member
+(mem_id varchar2(20) primary key, member_pw varchar2(20) not null, name varchar2(20) not null)
+
+
+create table visitor ( visi_no number primary key, 
+mem_id varchar2(20) not null, visi_pw varchar2(20) not null, contents varchar2(1000) not null, indate date )
+
+create sequence visi_seq
+
+create table visitor ( visi_no number primary key, 
+mem_id varchar2(20) not null, visi_pw varchar2(20) not null, contents varchar2(1000) not null, indate date )
+
+create sequence visi_seq
+
+//DML : insert, update, delete
+// JDBC's Statement's method executeUpdate() : int
+insert into member values ('jeon','1234','jeonhye0');
+insert into member values ('admin','admin','관리자');
+
+//Select : 개발자가 많이 사용하는 프로그램
+//JDBC's Statement's method executeQuery() : ResultSet
+// 조건절이 PK이면 결과값은 1개 이상 나오면 안된다.
+
+
+//SQLInjection 문자열 예시
+' or mem_id like '%

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//스크립트가 앞에 있으면 혹시나 디자인과 상관없는 처리가 늦여지면
+//디자인 구조도 잡히지 않고 대기한다.
+var aLink = function(){
+	alert('aLink');
+};
+//onclick="aLink()"
+</script>
+</head>
+<body>
+<div id="ui">
+<h1>로그인</h1>
+	아이디 : <input type="text"  ><br>
+	비밀번호 : <input type="password" ><br>
+<a >로그인 링크</a>
+</div>	
+	<script type="text/javascript">
+	//1. 비동기를 처리할 수 있는 메모리 영역
+	var xhr = new XMLHttpRequest(); //IE8.0 이상
+	var userCallbackMethod = function(){
+		//4.
+		if(xhr.readyState ==4){
+			if(xhr.status>=200 && xhr.status<400){
+				//UI's DOM 이용해서 데이터를 관리
+				//alert(xhr.responseText);
+				userDOMView(xhr.responseText);
+			}
+		}
+	};
+	//DOM 처리
+	var userDOMView = function(jsonTextData){
+		var jsonData = JSON.parse(jsonTextData); //브라우저 버전 IE
+		//console.log(jsonData);
+		document.querySelector("#ui").innerHTML = jsonData.loginName+"님 환영합니다.";
+		sessionStorage.setItem("login", jsonData.loginId);
+	}
+	var aTag = document.querySelector("a");
+	aTag.addEventListener("click", function(){
+		//2. 대기하는 함수를 지정
+		xhr.onreadystatechange = userCallbackMethod;
+		var inputId=document.querySelectorAll("input")[0].value;
+		var inputPw=document.querySelectorAll("input")[1].value;
+		var url="loginAction?id="+inputId+"&pw="+inputPw;
+		//3. 실제 서버에 필요한 처리를 요청
+		xhr.open("get", url);//true-비동기
+		xhr.send();//post
+	});
+	</script>
+</body>
+</html>
